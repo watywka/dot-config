@@ -47,4 +47,5 @@ return require('packer').startup(function(use)
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     })
     use {"akinsho/toggleterm.nvim", tag = '*'}
+    use {"folke/which-key.nvim"}
 end)
