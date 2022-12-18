@@ -36,4 +36,14 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep'} }
     }
     use 'moll/vim-bbye'
+    use {
+        'rmagatti/auto-session'
+    }
+    use {
+        'nvim-lualine/lualine.nvim',
+    }
+    use({
+        'kylechui/nvim-surround',
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    })
 end)
