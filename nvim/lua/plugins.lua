@@ -46,4 +46,5 @@ return require('packer').startup(function(use)
         'kylechui/nvim-surround',
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     })
+    use {"akinsho/toggleterm.nvim", tag = '*'}
 end)
