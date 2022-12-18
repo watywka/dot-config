@@ -10,9 +10,20 @@ return require('packer').startup(function(use)
         }
     }
     use 'sainnhe/everforest'
-    use('mbbill/undotree')
+    use 'mbbill/undotree'
 
-    use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+    use {
+        'nvim-treesitter/nvim-treesitter', 
+        --commit = '668de0951a36ef17016074f1120b6aacbe6c4515',
+        tag = 'v0.8.1',
+        run = ':TSUpdate'
+    }
+
+    use { 
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        after = 'nvim-treesitter',
+    }
+
     use {
         'lewis6991/gitsigns.nvim',
         -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)

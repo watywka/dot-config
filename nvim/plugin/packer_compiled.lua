@@ -99,6 +99,13 @@ _G.packer_plugins = {
     path = "/home/watywka/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-textobjects"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/watywka/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/watywka/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -117,6 +124,11 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
