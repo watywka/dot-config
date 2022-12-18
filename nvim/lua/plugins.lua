@@ -30,4 +30,10 @@ return require('packer').startup(function(use)
     }
     -- using packer.nvim
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep'} }
+    }
+    use 'moll/vim-bbye'
 end)
